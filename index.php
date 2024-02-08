@@ -1,5 +1,4 @@
 <?php
-    echo "WEWS";
 ?>
 <!DOCTYPE html>
 <html lang="en">
