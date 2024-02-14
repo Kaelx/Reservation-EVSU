@@ -1,7 +1,7 @@
 <?php
 $PAGE = "Home";
 
-include '../header.php';
+include 'pages/header.php';
 ?>
 
 <div class="container">
@@ -11,6 +11,6 @@ include '../header.php';
 </div>
 
 <?php
-include '../footer.php';
+include 'pages/footer.php';
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 $PAGE = "LOGIN";
 
-include 'header.php';
+include 'pages/header.php';
 ?>
 
 <div class="container py-5">
@@ -35,5 +35,5 @@ include 'header.php';
 </div>
 
 <?php
-include 'footer.php';
+include 'pages/footer.php';
 ?>
