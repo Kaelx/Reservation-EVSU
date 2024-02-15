@@ -5,6 +5,7 @@ include 'header.php';
 ?>
 
 
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -13,7 +14,7 @@ include 'header.php';
                     <h1>REGISTER NOW!</h1>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="#" method="post">
                         <div class="form-group mt-3">
                             <label for="name" class="form-label">GIVEN NAME</label>
                             <input type="text" class="form-control" id="name" name="name" required>
@@ -42,6 +43,7 @@ include 'header.php';
         </div>
     </div>
 </div>
+
 
 <?php
 include 'footer.php';

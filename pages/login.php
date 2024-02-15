@@ -4,6 +4,7 @@ $PAGE = "LOGIN";
 include 'header.php';
 ?>
 
+
 <div class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -33,6 +34,7 @@ include 'header.php';
         </div>
     </div>
 </div>
+
 
 <?php
 include 'footer.php';
