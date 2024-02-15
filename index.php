@@ -13,7 +13,7 @@
     <div class="container">
         <div class="d-flex flex-column justify-content-center align-items-center text-center">
             <h1>NOT LOGIN YET</h1>
-            <h1>LIST OF PRODUCTS WILL APPEAR HERE!</h1>
+            <h2>LIST OF PRODUCTS WILL APPEAR HERE!</h2>
             <div class="col-md-4">
                 <div class="card mx-auto">
                     <img src="images/image.jpeg" alt="product" class="card-img-top">

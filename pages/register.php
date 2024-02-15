@@ -19,7 +19,7 @@ include 'header.php';
                             <input type="text" class="form-control" id="name" name="name" required>
                         </div>
                         <div class="form-group mt-3">
-                            <label for="lastname" class="form-label">FAMILY Name</label>
+                            <label for="lastname" class="form-label">FAMILY NAME</label>
                             <input type="text" class="form-control" id="lastname" name="lastname" required>
                         </div>
                         <div class="form-group mt-3">
