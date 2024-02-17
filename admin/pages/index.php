@@ -1,5 +1,5 @@
 <?php
-$PAGE = 'DASHBOARD';
+$page = 'DASHBOARD';
 
 include 'header.php';
 ?>
