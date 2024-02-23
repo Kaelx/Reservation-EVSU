@@ -13,3 +13,19 @@ function add(event){
         }
     });
 }
+
+function login(event){
+    event.preventDefault();
+
+    var formData = $('form').serialize();
+
+    $.ajax({
+        url: '../controller/functions.php',
+        method: 'post',
+        data: formData + '&login=true',
+        success: function (response) {
+            alert(response);
+            location.reload();
+        }
+    });
+}

@@ -2,6 +2,9 @@
 $page = "LOGIN";
 
 include 'header.php';
+
+if (!isset($_SESSION['user'])) {
+
 ?>
 
 
@@ -15,15 +18,15 @@ include 'header.php';
                 <div class="card-body">
                     <form action="#" method="post">
                         <div class="form-group mt-3">
-                            <label for="username" class="form-label">STUDENT ID</label>
-                            <input type="text" class="form-control" id="username" name="username" required>
+                            <label for="studentid" class="form-label">STUDENT ID</label>
+                            <input type="text" class="form-control" id="studentid" name="studentid" required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="password" class="form-label">PASSWORD</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
                         <div class="form-group text-center mt-3">
-                            <button type="submit" class="btn btn-primary">LOGIN</button>
+                            <button type="submit" class="btn btn-primary" onclick="login(event)">LOGIN</button>
                         </div>
                         <div class="form-group text-center mt-3">
                             <a href="register.php">Don't have an account? REGISTER</a>
@@ -37,5 +40,10 @@ include 'header.php';
 
 
 <?php
+} else {
+    header("Location: index.php");
+}
+
+
 include 'footer.php';
 ?>
