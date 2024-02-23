@@ -2,6 +2,7 @@
 $page = "REGISTER";
 
 include 'header.php';
+
 ?>
 
 
@@ -16,12 +17,12 @@ include 'header.php';
                 <div class="card-body">
                     <form action="#" method="post">
                         <div class="form-group mt-3">
-                            <label for="name" class="form-label">GIVEN NAME</label>
-                            <input type="text" class="form-control" id="name" name="name" required>
+                            <label for="fname" class="form-label">GIVEN NAME</label>
+                            <input type="text" class="form-control" id="fname" name="fname" required>
                         </div>
                         <div class="form-group mt-3">
-                            <label for="lastname" class="form-label">FAMILY NAME</label>
-                            <input type="text" class="form-control" id="lastname" name="lastname" required>
+                            <label for="lname" class="form-label">FAMILY NAME</label>
+                            <input type="text" class="form-control" id="lname" name="lname" required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="studentid" class="form-label">STUDENT ID</label>
@@ -31,8 +32,12 @@ include 'header.php';
                             <label for="email" class="form-label">EVSU EMAIL</label>
                             <input type="email" class="form-control" id="email" name="email" required>
                         </div>
+                        <div class="form-group mt-3">
+                            <label for="password" class="form-label">PASSWORD</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
                         <div class="form-group mt-3 text-center">
-                            <button type="submit" class="btn btn-primary">Register</button>
+                            <button type="submit" class="btn btn-primary" onclick="add(event)">Register</button>
                         </div>
                         <div class="form-group mt-3 text-center">
                             <a href="login.php"> Already have an account? Login</a>

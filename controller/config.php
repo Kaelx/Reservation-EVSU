@@ -1,9 +1,9 @@
 <?php
-    // $user = "root";
-    // $password = "";
-    // $host = "localhost";
-    // $db = "ecommerce";
+    $host = "localhost";
+    $user = "root";
+    $password = "";
+    $db = "php_ecommerce";
 
-    // $conn = mysqli_connect($host, $user, $password, $db);
+    $conn = mysqli_connect($host, $user, $password, $db);
 
 ?>
