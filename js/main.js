@@ -9,7 +9,7 @@ function add(event){
         data: formData + '&register=true',
         success: function (response) {
             if(response == 1){
-                alert('Registered successfully');
+                alert('REGISTERED SUCCESSFULLY!');
                 location.reload();
             }else{
                 alert(response);
@@ -29,7 +29,7 @@ function login(event){
         data: formData + '&login=true',
         success: function (response) {
             if(response == 1){
-                alert('Login successfully');
+                alert('LOGIN SUCCESSFULLY!');
                 location.reload();
             }else{
                 alert(response);
