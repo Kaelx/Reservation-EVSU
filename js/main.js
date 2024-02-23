@@ -8,8 +8,12 @@ function add(event){
         method: 'post',
         data: formData + '&register=true',
         success: function (response) {
-            alert(response);
-            location.reload();
+            if(response == 1){
+                alert('Registered successfully');
+                location.reload();
+            }else{
+                alert(response);
+            }
         }
     });
 }
@@ -24,8 +28,12 @@ function login(event){
         method: 'post',
         data: formData + '&login=true',
         success: function (response) {
-            alert(response);
-            location.reload();
+            if(response == 1){
+                alert('Login successfully');
+                location.reload();
+            }else{
+                alert(response);
+            }
         }
     });
 }

@@ -19,11 +19,11 @@ if (!isset($_SESSION['user'])) {
                     <form action="#" method="post">
                         <div class="form-group mt-3">
                             <label for="studentid" class="form-label">STUDENT ID</label>
-                            <input type="text" class="form-control" id="studentid" name="studentid" required>
+                            <input type="text" class="form-control" id="studentid" name="studentid" autocomplete="on" required>
                         </div>
                         <div class="form-group mt-3">
                             <label for="password" class="form-label">PASSWORD</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" autocomplete="on" required>
                         </div>
                         <div class="form-group text-center mt-3">
                             <button type="submit" class="btn btn-primary" onclick="login(event)">LOGIN</button>

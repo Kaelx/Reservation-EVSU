@@ -21,7 +21,8 @@ if(isset($_POST['register'])){
     $stmt->execute();
 
     if($stmt->affected_rows > 0){
-        echo "REGISTERED SUCCESSFULLY!";
+        echo 1;
+        $_SESSION['user'] = $stud_id;
     } else {
         echo "REGISTRATION FIELD!";
     }
@@ -44,7 +45,7 @@ if(isset($_POST['login'])){
 
     if($result->num_rows > 0){
         if(password_verify($password, $user['password'])){
-            echo "LOGGED IN SUCCESSFULLY!";
+            echo 1;
             $_SESSION['user'] = $user['stud_id'];
         } else {
             echo "INVALID PASSWORD!";
