@@ -9,3 +9,6 @@
 #ignore modules
 node_modules/
 vendor/
+
+#ignore
+credentials.php
