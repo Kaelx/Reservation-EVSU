@@ -1,4 +1,4 @@
-# EVSU IGP E-COMMERCE PROJECT
+# EVSU IGP ITEMS ORDER/RESERVATION PROJECT
 ongoing project, still working on this!
 
 ### REQUIREMENTS
