@@ -2,6 +2,7 @@
 $page = 'LOGIN';
 
 include 'header.php';
+if (!isset($_SESSION['admin'])) {
 ?>
 
 <div class="container py-5">
@@ -30,6 +31,9 @@ include 'header.php';
 </div>
 
 <?php
+} else {
+    header('Location: index.php');
+}
 include 'footer.php';
 
 ?>
