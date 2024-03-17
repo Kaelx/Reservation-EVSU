@@ -11,6 +11,7 @@ include '../controller/config.php';
     <title><?php echo $page ?></title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js"></script>
 </head>
 <body>
     

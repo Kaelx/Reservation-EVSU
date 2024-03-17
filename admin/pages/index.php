@@ -43,6 +43,9 @@ if (isset($_SESSION['admin'])) {
         </div>
     </div>
 </div>
+<div>
+    <a href="../controller/logout.php" class="btn btn-danger">LOGOUT</a>
+</div>
 
 <?php
 } else {
