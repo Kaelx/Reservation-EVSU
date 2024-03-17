@@ -2,6 +2,7 @@
 $page = 'DASHBOARD';
 
 include 'header.php';
+if (isset($_SESSION['admin'])) {
 ?>
 
 <div class="container">
@@ -44,6 +45,9 @@ include 'header.php';
 </div>
 
 <?php
+} else {
+    header('Location: login.php');
+}
 
 include 'footer.php';
 ?>
