@@ -36,7 +36,7 @@ if (isset($_SESSION['admin'])) {
                 <h1 class="display-4">Welcome to the Dashboard</h1>
             </header>
             <main class="mt-4">
-                <p class="lead">This is the admin dashboard for managing your e-commerce website.</p>
+                <p class="lead">This is the admin dashboard for managing.</p>
             </main>
         </div>
     </div>
