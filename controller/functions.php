@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php';
+require 'config.php';
 
 if(isset($_POST['register'])){
     $fname = $_POST['fname'];

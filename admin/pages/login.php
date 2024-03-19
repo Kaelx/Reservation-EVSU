@@ -1,7 +1,7 @@
 <?php
 $page = 'LOGIN';
 
-include 'header.php';
+require 'header.php';
 
 
 if (!isset($_SESSION['admin'])) {
@@ -40,6 +40,6 @@ if (!isset($_SESSION['admin'])) {
     header('Location: index.php');
 }
 
-include 'footer.php';
+require 'footer.php';
 
 ?>

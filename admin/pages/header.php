@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-include '../controller/config.php';
+require '../controller/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

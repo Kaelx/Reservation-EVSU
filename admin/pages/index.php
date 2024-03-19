@@ -1,7 +1,7 @@
 <?php
 $page = 'DASHBOARD';
 
-include 'header.php';
+require 'header.php';
 if (isset($_SESSION['admin'])) {
 ?>
 
@@ -52,5 +52,5 @@ if (isset($_SESSION['admin'])) {
     header('Location: login.php');
 }
 
-include 'footer.php';
+require 'footer.php';
 ?>
