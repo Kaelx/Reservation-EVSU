@@ -5,4 +5,5 @@ ongoing project, still working on this!
 - XAMPP
 - npm install bootstrap
 - npm install jquery
+- npm install bootstrap-icons
 - composer require phpmailer

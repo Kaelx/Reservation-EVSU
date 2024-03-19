@@ -5,35 +5,36 @@ require 'header.php';
 if (isset($_SESSION['admin'])) {
 ?>
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <aside class="col-md-3 collapse d-md-block" id="sidebarMenu">
-            <nav class="sidebar">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">
-                            <i class="fa fa-tachometer-alt me-2"></i>Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-box-open me-2"></i>Orders
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="fa fa-tag me-2"></i>Products
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <div class="col-md-9">
+
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar">
+            <div>
+                <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+            <h1><a href="index.php" class="logo">Project Name</a></h1>
+            <ul class="mb-5">
+                <li>
+                    <a href="#"><i class="bi bi-person-fill mr-3"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-gear-fill mr-3"></i> Settings</a>
+                </li>
+                <li>
+                    <a href="#"><i class="bi bi-info-circle-fill mr-3"></i> Information</a>
+                </li>
+            </ul>
+
+
+            <div>
+                <a href="../controller/logout.php" class="btn btn-danger">LOGOUT</a>
+            </div>
+
+        </nav>
+
+
+        <div id="content" class="p-4 p-md-5 pt-5 text-center">
             <header class="mb-3">
                 <h1 class="display-4">Welcome to the Dashboard</h1>
             </header>
@@ -42,10 +43,8 @@ if (isset($_SESSION['admin'])) {
             </main>
         </div>
     </div>
-</div>
-<div>
-    <a href="../controller/logout.php" class="btn btn-danger">LOGOUT</a>
-</div>
+
+
 
 <?php
 } else {
