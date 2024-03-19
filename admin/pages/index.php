@@ -8,13 +8,13 @@ if (isset($_SESSION['admin'])) {
 
     <div class="wrapper d-flex align-items-stretch">
         <nav id="sidebar" class="bg-light">
-            <div class="sidebar-header">
+            <div class="sidebar-header text-center">
                 <button type="button" id="sidebarCollapse" class="btn btn-secondary">
                     <i class="bi bi-list"></i>
                 </button>
-                <h1><a href="index.php" class="logo">Project Name</a></h1>
+                <h1><a href="index.php" class="logo">ADMIN</a></h1>
             </div>
-            <ul class="list-unstyled components mb-5">
+            <ul class="list-unstyled components mt-4">
                 <li class="active">
                     <a href="#"><i class="bi bi-person-fill mr-3"></i> Dashboard</a>
                 </li>
@@ -25,7 +25,7 @@ if (isset($_SESSION['admin'])) {
                     <a href="#"><i class="bi bi-info-circle-fill mr-3"></i> Information</a>
                 </li>
             </ul>
-            <div class="logout">
+            <div class="text-center mt-4">
                 <a href="../controller/logout.php" class="btn btn-danger">LOGOUT</a>
             </div>
         </nav>
