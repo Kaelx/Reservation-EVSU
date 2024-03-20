@@ -38,7 +38,7 @@ if (!isset($_SESSION['user'])) {
                                         <img src="<?php echo 'admin/images/'. $products['product_image']; ?>" alt="product-img" class="img-fluid">
                                         <div class="card-body">
                                             <h3 class="card-title fw-bold"><?php echo $products['product_name']; ?></h3>
-                                            <p class="card-text text-muted lead lh-base"><?php echo $products['product_description']; ?></p>
+                                            <p class="card-text text-muted lead"><?php echo $products['product_description']; ?></p>
                                             <a href="pages/login.php" class="btn btn-primary">ORDER NOW!</a>
                                         </div>
                                     </div>
@@ -50,6 +50,8 @@ if (!isset($_SESSION['user'])) {
                         </div>
                     </div>
                 </section>
+
+                
             </div>
         </div>
     </body>
