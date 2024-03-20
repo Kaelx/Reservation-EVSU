@@ -28,14 +28,9 @@ if (isset($_SESSION['admin'])) {
                     </div>
                 </div>
 
-
-
-
-
-
+                
                 <div class="overlay" id="overlay"></div>
                 <div class="floating-form container p-4" id="floatingForm">
-                    <h3 class="mb-4">Add Product</h3>
                     <form class="form-container" id="productForm" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="productName" class="form-label">Product Name:</label>
@@ -75,42 +70,31 @@ if (isset($_SESSION['admin'])) {
 
             </div>
 
-
+<?php
+    $user = $_SESSION['admin'];
+    $sql = "SELECT * FROM products where user_id = $user";
+    $result = $conn->query($sql);
+?>
             <section id="products" class="bg-link mt-5">
                 <div class="container-lg">
                     <div class="row justify-content-center align-item-center g-4">
-                        <div class="col col-lg-4 col-md-4 d-flex align-items-stretch ">
-                            <div class="card">
-                                <img src="#" alt="product-img" class="img-fluid">
-                                <div class="card-body">
-                                    <h3 class="card-title fw-bold">ITEM 1</h3>
-                                    <p class="card-text text-muted lead lh-base">ITEM DETAILES</p>
-                                    <a href="#" class="btn btn-primary btn-lg">BUTTON HERE!</a>
-                                </div>
-                            </div>
-                        </div>
+        <?php
+            while($products = $result->fetch_assoc()) {
+        ?>
+        <div class="col col-lg-4 col-md-4 d-flex align-items-stretch">
+            <div class="card">
+                <img src="<?php echo $products['product_image']; ?>" alt="product-img" class="img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title fw-bold"><?php echo $products['product_name']; ?></h3>
+                    <p class="card-text text-muted lead lh-base"><?php echo $products['product_description']; ?></p>
+                    <a href="#" class="btn btn-primary">BUTTON HERE!</a>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+?>
 
-                        <div class="col-lg-4 col-md-4 col-sm-4  d-flex align-items-stretch">
-                            <div class="card">
-                                <img src="#" alt="product-img" class="img-fluid">
-                                <div class="card-body">
-                                    <h3 class="card-title fw-bold">ITEM 2</h3>
-                                    <p class="card-text text-muted lead lh-base">ITEM DETAILES</p>
-                                    <a href="#" class="btn btn-primary btn-lg">BUTTON HERE!</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-4  d-flex align-items-stretch">
-                            <div class="card">
-                                <img src="#" alt="product-img" class="img-fluid">
-                                <div class="card-body">
-                                    <h3 class="card-title fw-bold">ITEM 3</h3>
-                                    <p class="card-text text-muted lead lh-base">ITEM DETAILES</p>
-                                    <a href="#" class="btn btn-primary btn-lg">BUTTON HERE!</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

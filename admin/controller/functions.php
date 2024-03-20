@@ -22,11 +22,14 @@ if(isset($_POST['register'])){
 
     if($stmt->affected_rows > 0){
         echo 1;
-        $_SESSION['admin'] = $employee_id;
     } else {
         echo "REGISTRATION FIELD!";
     }
 }
+
+
+
+
 
 if(isset($_POST['login'])){
     $employee_id = $_POST['employeeid'];
@@ -46,7 +49,7 @@ if(isset($_POST['login'])){
     if($result->num_rows > 0){
         if(password_verify($password, $user['password'])){
             echo 1;
-            $_SESSION['admin'] = $user['employee_id'];
+            $_SESSION['admin'] = $user['id'];
         } else {
             echo "INVALID PASSWORD!";
         }
@@ -56,7 +59,11 @@ if(isset($_POST['login'])){
 }
 
 
+
+
 if(isset($_POST['addProduct'])){
+    $user = $_SESSION['admin'];
+
     $pName = $_POST['productName'];
     $pDesc = $_POST['productDesc'];
     $pQuantity = $_POST['productQuantity'];
@@ -74,8 +81,8 @@ if(isset($_POST['addProduct'])){
         $upload_path = "../images/$productName";
 
         if(move_uploaded_file($productName_temp, $upload_path)) {
-            $stmt = $conn->prepare("INSERT INTO products (product_name, product_image, product_description, product_quantity, product_price) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssid", $pName, $upload_path, $pDesc, $pQuantity, $pPrice);
+            $stmt = $conn->prepare("INSERT INTO products (user_id, product_name, product_image, product_description, product_quantity, product_price) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("isssid", $user, $pName, $upload_path, $pDesc, $pQuantity, $pPrice);
             $stmt->execute();
             
             if($stmt->affected_rows > 0){

@@ -14,7 +14,7 @@ function register(event){
         success: function (response) {
             if(response == 1){
                 alert('REGISTERED SUCCESSFULLY!');
-                location.reload();
+                window.location.href = 'login.php';
             }else{
                 alert(response);
             }
