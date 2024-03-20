@@ -16,11 +16,11 @@ if (!isset($_SESSION['admin'])) {
                     <form action="#" method="post">
                         <div class="mb-3">
                             <label for="employeeid" class="form-label">Employee ID</label>
-                            <input type="text" name="employeeid" id="employeeid" class="form-control" required>
+                            <input type="text" name="employeeid" id="employeeid" class="form-control" required autocomplete="on">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" required>
+                            <input type="password" name="password" id="password" class="form-control" required autocomplete="on">
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary" onclick="login(event)">Login</button>
