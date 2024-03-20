@@ -1,5 +1,5 @@
 <?php
-$page = 'DASHBOARD';
+$page = 'INVENTORY';
 
 require 'header.php';
 if (isset($_SESSION['admin'])) {
@@ -22,7 +22,7 @@ if (isset($_SESSION['admin'])) {
                     </div>
                     <div class="col-md-4">
                         <div class="d-flex">
-                            <button class="btn btn-success me-1" id="searchButton" onclick="searchProducts()">Search</button>
+                            <button class="btn btn-secondary me-1" id="searchButton" onclick="searchProducts()">Search</button>
                             <input class="form-control" type="search" id="searchInput" placeholder="Search products...">
                         </div>
                     </div>
@@ -71,8 +71,7 @@ if (isset($_SESSION['admin'])) {
             </div>
 
 <?php
-    $user = $_SESSION['admin'];
-    $sql = "SELECT * FROM products where user_id = $user";
+    $sql = "SELECT * FROM products";
     $result = $conn->query($sql);
 ?>
             <section id="products" class="bg-link mt-5">
