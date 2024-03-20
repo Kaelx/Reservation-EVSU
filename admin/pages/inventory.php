@@ -41,16 +41,14 @@ if (isset($_SESSION['admin'])) {
                             <label for="productName" class="form-label">Product Name:</label>
                             <input type="text" class="form-control" id="productName" name="productName" required>
                         </div>
-
                         <div class="mb-3">
                             <label for="productImage" class="form-label">Product Image:</label>
-                            <input type="file" class="form-control" id="productImage" name="productImage" accept="image/*" required>
+                            <input type="file" class="form-control" id="productImage" name="productImage" required>
                         </div>
                         <div class="mb-3">
                             <label for="productDesc" class="form-label">Product Description:</label>
                             <input type="text" class="form-control input-large" id="productDesc" name="productDesc" required>
                         </div>
-
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="mb-3">
@@ -63,7 +61,6 @@ if (isset($_SESSION['admin'])) {
                                 </div>
                             </div>
                         </div>
-
                         <div class="mb-3">
                             <label for="productPrice" class="form-label">Price:</label>
                             <div class="input-group">
@@ -71,7 +68,6 @@ if (isset($_SESSION['admin'])) {
                                 <input type="number" class="form-control" id="productPrice" name="productPrice" step="0.01" required>
                             </div>
                         </div>
-
                         <button type="submit" class="btn btn-primary" onclick="addBtn(event)"> Add Product</button>
                         <button type="button" class="btn btn-secondary" onclick="cancelBtn()">Cancel</button>
                     </form>

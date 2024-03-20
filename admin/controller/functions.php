@@ -55,4 +55,41 @@ if(isset($_POST['login'])){
     }
 }
 
+
+if(isset($_POST['addProduct'])){
+    $pName = $_POST['productName'];
+    $pDesc = $_POST['productDesc'];
+    $pQuantity = $_POST['productQuantity'];
+    $pPrice = $_POST['productPrice'];
+
+    if(empty($pName) || empty($pDesc) || empty($pQuantity) || empty($pPrice)) {
+        echo "PLEASE FILL UP ALL FIELDS!";
+        return;
+    }
+
+
+    if(isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
+        $productName = $_FILES['productImage']['name'];
+        $productName_temp = $_FILES['productImage']['tmp_name'];
+        $upload_path = "../images/$productName";
+
+        if(move_uploaded_file($productName_temp, $upload_path)) {
+            $stmt = $conn->prepare("INSERT INTO products (product_name, product_image, product_description, product_quantity, product_price) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("sssid", $pName, $upload_path, $pDesc, $pQuantity, $pPrice);
+            $stmt->execute();
+            
+            if($stmt->affected_rows > 0){
+                echo 1; 
+            } else {
+                echo "PRODUCT ADDITION FAILED!";
+            }
+        } else {
+            echo "Something went wrong!";
+        }
+    } else {
+        echo "Error uploading file!";
+    }
+}
+
+
 ?>

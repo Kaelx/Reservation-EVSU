@@ -39,7 +39,7 @@ if(!isset($_SESSION['admin'])){
                             <input type="password" class="form-control" id="password" name="password" autocomplete="on" required>
                         </div>
                         <div class="form-group mt-3 text-center">
-                            <button type="submit" class="btn btn-primary" onclick="add(event)">Register</button>
+                            <button type="submit" class="btn btn-primary" onclick="register(event)">Register</button>
                         </div>
                         <div class="form-group mt-3 text-center">
                             <a href="login.php"> Already have an account? Login</a>

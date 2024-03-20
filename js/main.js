@@ -1,12 +1,16 @@
-function add(event){
+function register(event){
     event.preventDefault();
 
-    var formData = $('form').serialize();
+    var formData = new FormData($('form')[0]);
+    formData.append('register', true);
 
     $.ajax({
         url: '../controller/functions.php',
         method: 'post',
-        data: formData + '&register=true',
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
         success: function (response) {
             if(response == 1){
                 alert('REGISTERED SUCCESSFULLY!');
@@ -21,12 +25,16 @@ function add(event){
 function login(event){
     event.preventDefault();
 
-    var formData = $('form').serialize();
+    var formData = new FormData($('form')[0]);
+    formData.append('login', true);
 
     $.ajax({
         url: '../controller/functions.php',
         method: 'post',
-        data: formData + '&login=true',
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
         success: function (response) {
             if(response == 1){
                 alert('LOGIN SUCCESSFULLY!');
