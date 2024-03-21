@@ -96,40 +96,43 @@ function cancelBtn() {
 
 
 function searchProducts() {
-    var search = document.getElementById("searchInput").value.toLowerCase();
-    var cards = document.getElementsByClassName("card");
+    var searchInput = $("#searchInput").val().toLowerCase();
 
-    for (var i = 0; i < cards.length; i++) {
-
-    }
+    $(".card").each(function() {
+        var productName = $(this).find(".card-title").text().toLowerCase();
+        var productDescription = $(this).find(".card-text").text().toLowerCase();
+        
+        if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
 }
 
-
-document.getElementById("searchInput").addEventListener("keydown", function (event) {
+$("#searchInput").keydown(function( event ){
     if (event.key === "Enter") {
         searchProducts();
     } else if (event.key === "Backspace") {
-        document.getElementById("searchInput").value = "";
+        $("#searchInput").value = "";
         searchProducts();
     }
 });
 
 
-
-
 function increaseValue() {
-    var value = parseInt(document.getElementById('productQuantity').value, 10);
+    var value = parseInt($('#productQuantity').val(), 10);
     value = isNaN(value) ? 0 : value;
     value++;
-    document.getElementById('productQuantity').value = value;
+    $('#productQuantity').val(value);
 }
 
 function decreaseValue() {
-    var value = parseInt(document.getElementById('productQuantity').value, 10);
+    var value = parseInt($('#productQuantity').val(), 10);
     value = isNaN(value) ? 0 : value;
     value < 1 ? value = 1 : '';
     value--;
-    document.getElementById('productQuantity').value = value;
+    $('#productQuantity').val(value);
 }
 
 
