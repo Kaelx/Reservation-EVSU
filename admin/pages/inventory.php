@@ -19,7 +19,7 @@ if (isset($_SESSION['admin'])) {
             <div class="container mt-3">
                 <div class="row justify-content-between">
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-success" id="addproductBtn" onclick="addproductBtn()">Add Product</button>
+                        <button type="button" class="btn btn-success" id="addproductBtn" onclick="showProductBtn()">Add Product</button>
                     </div>
                     <div class="col-md-4">
                         <div class="d-flex">
@@ -81,28 +81,44 @@ if (isset($_SESSION['admin'])) {
 
             $result = $conn->query($sql);
             ?>
-            <section class="bg-link mt-5">
+            <section class="products-section mt-5">
                 <div class="container-lg">
-                    <div class="row justify-content-center align-item-center g-4">
-                        <?php
-                        while ($products = $result->fetch_assoc()) {
-                        ?>
-                            <div class="col col-lg-4 col-md-4 d-flex align-items-stretch " id="productList">
-                                <div class="card">
-                                    <img src="<?php echo $products['product_image']; ?>" alt="product-img" class="img-fluid">
-                                    <div class="card-body">
-                                        <h3 class="card-title fw-bold"><?php echo $products['product_name']; ?></h3>
-                                        <p class="card-text text-muted"><?php echo $products['product_description']; ?></p>
-                                        <a href="#" class="btn btn-primary">BUTTON HERE!</a>
-                                    </div>
-                                </div>
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th scope="col">Image</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Description</th>
+                                            <th scope="col">Quantity (Per set)</th>
+                                            <th scope="col">Price (Per set)</th>
+                                            <th scope="col">Manage</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php while ($products = $result->fetch_assoc()) { ?>
+                                            <tr>
+                                                <td><img src="<?= $products['product_image'] ?>" alt="Product Image" class="img-fluid"></td>
+                                                <td><?= $products['product_name'] ?></td>
+                                                <td><?= $products['product_description'] ?></td>
+                                                <td><?= $products['product_quantity'] ?></td>
+                                                <td><?= $products['product_price'] ?></td>
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="UpdateBtn(<?= $products['id'] ?>)">Manage</button>
+                                                </td>
+                                            </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
                             </div>
-                        <?php
-                        }
-                        ?>
+                        </div>
                     </div>
                 </div>
             </section>
+
+
 
 
         </div>

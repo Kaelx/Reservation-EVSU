@@ -70,7 +70,10 @@ function addBtn(event) {
     });
 }
 
-function addproductBtn() {
+
+
+
+function showProductBtn() {
     var floatingForm = document.getElementById("floatingForm");
     var overlay = document.getElementById("overlay");
 
@@ -86,32 +89,55 @@ function cancelBtn() {
     overlay.style.display = "none";
 }
 
-// function searchProducts() {
-//     var searchInput = $("#searchInput").val().toLowerCase();
 
-//     $(".card").each(function() {
-//         var productName = $(this).find(".card-title").text().toLowerCase();
-//         var productDescription = $(this).find(".card-text").text().toLowerCase();
 
-//         if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
-//             $(this).show();
-//         } else {
-//             $(this).hide();
-//         }
-//     });
-// }
+
+
+
+
+
+function UpdateBtn($productID){
+    window.location.href = "update.php?id=" + $productID;
+}
+
+function confirmBtn($productsID){
+    alert($productsID);
+}
+
+
+
 
 function searchProducts() {
-    var searchInput = $("#searchInput").val().toLowerCase();
-    window.location.href = "inventory.php?query=" + searchInput;
+    var searchInput = $("#searchInput").val().trim().toLowerCase();
+
+    $("tbody tr").each(function() {
+        var productName = $(this).find("td:nth-child(2)").text().toLowerCase();
+        var productDescription = $(this).find("td:nth-child(3)").text().toLowerCase();
+
+        if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
+            $(this).show();
+        } else {
+            $(this).hide();
+        }
+    });
 }
+
+
+
+
+
+// function searchProducts() {
+//     var searchInput = $("#searchInput").val().toLowerCase();
+//     window.location.href = "inventory.php?query=" + searchInput;
+// }
+
 
 $("#searchInput").keydown(function (event) {
     if (event.key === "Enter") {
         searchProducts();
     } else if (event.key === "Backspace") {
         $("#searchInput").value = "";
-        window.location.href = "inventory.php?query=" + "";
+        searchProducts();
     }
 });
 
