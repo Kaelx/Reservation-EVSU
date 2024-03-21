@@ -35,7 +35,7 @@ if (!isset($_SESSION['user'])) {
                             ?>
                                 <div class="col col-lg-4 col-md-4 d-flex align-items-stretch">
                                     <div class="card">
-                                        <img src="<?php echo 'admin/images/'. $products['product_image']; ?>" alt="product-img" class="img-fluid">
+                                        <img src="<?php echo 'admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
                                         <div class="card-body">
                                             <h3 class="card-title fw-bold"><?php echo $products['product_name']; ?></h3>
                                             <p class="card-text text-muted lead"><?php echo $products['product_description']; ?></p>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['user'])) {
                     </div>
                 </section>
 
-                
+
             </div>
         </div>
     </body>

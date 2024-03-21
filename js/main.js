@@ -1,4 +1,4 @@
-function register(event){
+function register(event) {
     event.preventDefault();
 
     var formData = new FormData($('form')[0]);
@@ -12,17 +12,17 @@ function register(event){
         processData: false,
         cache: false,
         success: function (response) {
-            if(response == 1){
+            if (response == 1) {
                 alert('REGISTERED SUCCESSFULLY!');
                 window.location.href = 'login.php';
-            }else{
+            } else {
                 alert(response);
             }
         }
     });
 }
 
-function login(event){
+function login(event) {
     event.preventDefault();
 
     var formData = new FormData($('form')[0]);
@@ -36,10 +36,10 @@ function login(event){
         processData: false,
         cache: false,
         success: function (response) {
-            if(response == 1){
+            if (response == 1) {
                 alert('LOGIN SUCCESSFULLY!');
                 location.reload();
-            }else{
+            } else {
                 alert(response);
             }
         }

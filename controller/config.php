@@ -1,9 +1,7 @@
 <?php
-    $host = "localhost";
-    $user = "root";
-    $password = "";
-    $db = "webphp";
+$host = "localhost";
+$user = "root";
+$password = "";
+$db = "webphp";
 
-    $conn = mysqli_connect($host, $user, $password, $db);
-
-?>
+$conn = mysqli_connect($host, $user, $password, $db);

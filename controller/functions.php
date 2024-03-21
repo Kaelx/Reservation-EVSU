@@ -2,14 +2,14 @@
 session_start();
 require 'config.php';
 
-if(isset($_POST['register'])){
+if (isset($_POST['register'])) {
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $stud_id = $_POST['studentid'];
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if(empty($fname) || empty($lname) || empty($stud_id) || empty($email) || empty($password)) {
+    if (empty($fname) || empty($lname) || empty($stud_id) || empty($email) || empty($password)) {
         echo "PLEASE FILL UP ALL FIELDS!";
         return;
     }
@@ -20,18 +20,18 @@ if(isset($_POST['register'])){
     $stmt->bind_param("sssss", $fname, $lname, $stud_id, $email, $hash);
     $stmt->execute();
 
-    if($stmt->affected_rows > 0){
+    if ($stmt->affected_rows > 0) {
         echo 1;
     } else {
         echo "REGISTRATION FIELD!";
     }
 }
 
-if(isset($_POST['login'])){
+if (isset($_POST['login'])) {
     $stud_id = $_POST['studentid'];
     $password = $_POST['password'];
 
-    if(empty($stud_id) || empty($password)) {
+    if (empty($stud_id) || empty($password)) {
         echo "PLEASE FILL UP ALL FIELDS!";
         return;
     }
@@ -42,8 +42,8 @@ if(isset($_POST['login'])){
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
 
-    if($result->num_rows > 0){
-        if(password_verify($password, $user['password'])){
+    if ($result->num_rows > 0) {
+        if (password_verify($password, $user['password'])) {
             echo 1;
             $_SESSION['user'] = $user['id'];
         } else {
@@ -53,5 +53,3 @@ if(isset($_POST['login'])){
         echo "INVALID STUDENT ID!";
     }
 }
-
-?>
