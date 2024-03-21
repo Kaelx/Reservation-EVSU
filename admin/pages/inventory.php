@@ -2,6 +2,7 @@
 $page = 'INVENTORY';
 
 require 'header.php';
+
 if (isset($_SESSION['admin'])) {
 ?>
 
@@ -23,7 +24,7 @@ if (isset($_SESSION['admin'])) {
                     <div class="col-md-4">
                         <div class="d-flex">
                             <button class="btn btn-secondary me-1" id="searchButton" onclick="searchProducts()">Search</button>
-                            <input class="form-control" type="search" id="searchInput" placeholder="Search products...">
+                            <input class="form-control" type="search" id="searchInput" placeholder="Search products..." autofocus>
                         </div>
                     </div>
                 </div>
@@ -71,7 +72,13 @@ if (isset($_SESSION['admin'])) {
             </div>
 
             <?php
-            $sql = "SELECT * FROM products";
+            if (isset($_GET['query'])) {
+                $search = $_GET['query'];
+                $sql = "SELECT * FROM products WHERE product_name LIKE '%$search%'";
+            } else {
+                $sql = "SELECT * FROM products";
+            }
+
             $result = $conn->query($sql);
             ?>
             <section class="bg-link mt-5">
@@ -80,7 +87,7 @@ if (isset($_SESSION['admin'])) {
                         <?php
                         while ($products = $result->fetch_assoc()) {
                         ?>
-                            <div class="col col-lg-4 col-md-4 d-flex align-items-stretch">
+                            <div class="col col-lg-4 col-md-4 d-flex align-items-stretch " id="productList">
                                 <div class="card">
                                     <img src="<?php echo $products['product_image']; ?>" alt="product-img" class="img-fluid">
                                     <div class="card-body">
@@ -93,7 +100,6 @@ if (isset($_SESSION['admin'])) {
                         <?php
                         }
                         ?>
-
                     </div>
                 </div>
             </section>

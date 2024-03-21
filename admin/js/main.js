@@ -1,80 +1,74 @@
-function register(event){
+function register(event) {
     event.preventDefault();
 
-    var formData = new FormData($('form')[0]);
-    formData.append('register', true);
+    var formData = new FormData($("form")[0]);
+    formData.append("register", true);
 
     $.ajax({
-        url: '../controller/functions.php',
-        method: 'post',
+        url: "../controller/functions.php",
+        method: "post",
         data: formData,
         contentType: false,
         processData: false,
         cache: false,
         success: function (response) {
-            if(response == 1){
-                alert('REGISTERED SUCCESSFULLY!');
-                window.location.href = 'login.php';
-            }else{
-                alert(response);
-            }
-        }
-    });
-}
-
-function login(event){
-    event.preventDefault();
-
-    var formData = new FormData($('form')[0]);
-    formData.append('login', true);
-
-    $.ajax({
-        url: '../controller/functions.php',
-        method: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        cache: false,
-        success: function (response) {
-            if(response == 1){
-                alert('LOGIN SUCCESSFULLY!');
-                location.reload();
-            }else{
-                alert(response);
-            }
-        }
-    });
-}
-
-
-
-function addBtn(event) {
-    event.preventDefault();
-
-    var formData = new FormData($('form')[0]);
-    formData.append('addProduct', true);
-
-    $.ajax({
-        url: '../controller/functions.php',
-        method: 'post',
-        data: formData,
-        contentType: false,
-        processData: false,
-        cache: false,
-        success: function(response) {
             if (response == 1) {
-                alert('PRODUCT ADDED SUCCESSFULLY!');
+                alert("REGISTERED SUCCESSFULLY!");
+                window.location.href = "login.php";
+            } else {
+                alert(response);
+            }
+        },
+    });
+}
+
+function login(event) {
+    event.preventDefault();
+
+    var formData = new FormData($("form")[0]);
+    formData.append("login", true);
+
+    $.ajax({
+        url: "../controller/functions.php",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: function (response) {
+            if (response == 1) {
+                alert("LOGIN SUCCESSFULLY!");
                 location.reload();
             } else {
                 alert(response);
             }
-        }
+        },
     });
 }
 
+function addBtn(event) {
+    event.preventDefault();
 
+    var formData = new FormData($("form")[0]);
+    formData.append("addProduct", true);
 
-
+    $.ajax({
+        url: "../controller/functions.php",
+        method: "post",
+        data: formData,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: function (response) {
+            if (response == 1) {
+                alert("PRODUCT ADDED SUCCESSFULLY!");
+                location.reload();
+            } else {
+                alert(response);
+            }
+        },
+    });
+}
 
 function addproductBtn() {
     var floatingForm = document.getElementById("floatingForm");
@@ -92,53 +86,53 @@ function cancelBtn() {
     overlay.style.display = "none";
 }
 
+// function searchProducts() {
+//     var searchInput = $("#searchInput").val().toLowerCase();
 
+//     $(".card").each(function() {
+//         var productName = $(this).find(".card-title").text().toLowerCase();
+//         var productDescription = $(this).find(".card-text").text().toLowerCase();
 
+//         if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
+//             $(this).show();
+//         } else {
+//             $(this).hide();
+//         }
+//     });
+// }
 
 function searchProducts() {
     var searchInput = $("#searchInput").val().toLowerCase();
-
-    $(".card").each(function() {
-        var productName = $(this).find(".card-title").text().toLowerCase();
-        var productDescription = $(this).find(".card-text").text().toLowerCase();
-        
-        if (productName.includes(searchInput) || productDescription.includes(searchInput)) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
-    });
+    window.location.href = "inventory.php?query=" + searchInput;
 }
 
-$("#searchInput").keydown(function( event ){
+$("#searchInput").keydown(function (event) {
     if (event.key === "Enter") {
         searchProducts();
     } else if (event.key === "Backspace") {
         $("#searchInput").value = "";
-        searchProducts();
+        window.location.href = "inventory.php?query=" + "";
     }
 });
 
-
 function increaseValue() {
-    var value = parseInt($('#productQuantity').val(), 10);
+    var value = parseInt($("#productQuantity").val(), 10);
     value = isNaN(value) ? 0 : value;
     value++;
-    $('#productQuantity').val(value);
+    $("#productQuantity").val(value);
 }
 
 function decreaseValue() {
-    var value = parseInt($('#productQuantity').val(), 10);
+    var value = parseInt($("#productQuantity").val(), 10);
     value = isNaN(value) ? 0 : value;
-    value < 1 ? value = 1 : '';
+    value < 1 ? (value = 1) : "";
     value--;
-    $('#productQuantity').val(value);
+    $("#productQuantity").val(value);
 }
 
-
 $(document).ready(function () {
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-        $('#content').toggleClass('active');
+    $("#sidebarCollapse").on("click", function () {
+        $("#sidebar").toggleClass("active");
+        $("#content").toggleClass("active");
     });
 });
