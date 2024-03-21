@@ -76,12 +76,6 @@ function addBtn(event) {
 
 
 
-
-
-
-
-
-
 function addproductBtn() {
     var floatingForm = document.getElementById("floatingForm");
     var overlay = document.getElementById("overlay");
@@ -101,10 +95,25 @@ function cancelBtn() {
 
 
 
+function searchProducts() {
+    var search = document.getElementById("searchInput").value.toLowerCase();
+    var cards = document.getElementsByClassName("card");
 
-function searchProducts(event){
-    alert('clicked');
+    for (var i = 0; i < cards.length; i++) {
+
+    }
 }
+
+
+document.getElementById("searchInput").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        searchProducts();
+    } else if (event.key === "Backspace") {
+        document.getElementById("searchInput").value = "";
+        searchProducts();
+    }
+});
+
 
 
 
