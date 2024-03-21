@@ -1,5 +1,5 @@
 <?php
-$page = 'DASHBOARD';
+$page = 'MANAGE';
 
 require 'header.php';
 if (isset($_SESSION['admin'])) {
