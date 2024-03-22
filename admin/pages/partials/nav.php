@@ -16,7 +16,7 @@
             <a href="#"><i class="bi bi-info-circle-fill mr-3"></i> ORDERS</a>
         </li>
         <li>
-            <a href="#"><i class="bi bi-info-circle-fill mr-3"></i> SALES</a>
+            <a href="#"><i class="bi bi-info-circle-fill mr-3"></i> SALES HISTORY</a>
         </li>
         <li>
             <a href="#"><i class="bi bi-gear-fill mr-3"></i> SETTINGS</a>
