@@ -93,17 +93,14 @@ function cancelBtn() {
 
 
 
-
-
-
-function UpdateBtn($productID){
-    window.location.href = "update.php?id=" + $productID;
+function ManageBtn(productId) {
+    window.location.href = "manage.php?updateID=" + productId;
 }
 
-function confirmBtn($productsID){
-    alert($productsID);
-}
 
+function DeleteBtn(productId){
+    window.location.href = "manage.php?deleteID=" + productId;
+}
 
 
 

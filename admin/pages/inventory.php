@@ -72,13 +72,8 @@ if (isset($_SESSION['admin'])) {
             </div>
 
             <?php
-            if (isset($_GET['query'])) {
-                $search = $_GET['query'];
-                $sql = "SELECT * FROM products WHERE product_name LIKE '%$search%'";
-            } else {
-                $sql = "SELECT * FROM products";
-            }
 
+            $sql = "SELECT * FROM products";
             $result = $conn->query($sql);
             ?>
             <section class="products-section mt-5">
@@ -106,7 +101,7 @@ if (isset($_SESSION['admin'])) {
                                                 <td><?= $products['product_quantity'] ?></td>
                                                 <td><?= $products['product_price'] ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="UpdateBtn(<?= $products['id'] ?>)">Manage</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="ManageBtn(<?= $products['id']?>)">Manage</button>
                                                 </td>
                                             </tr>
                                         <?php } ?>

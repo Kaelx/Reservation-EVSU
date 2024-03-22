@@ -4,8 +4,8 @@ $page = 'MANAGE';
 require 'header.php';
 if (isset($_SESSION['admin'])) {
 
-    if (isset($_GET['id'])) {
-        $productID = $_GET['id'];
+    if (isset($_GET['updateID'])) {
+        $productID = $_GET['updateID'];
 
         $stmt = $conn->prepare("SELECT * FROM products WHERE id = ?");
         $stmt->bind_param("i", $productID);
@@ -28,6 +28,20 @@ if (isset($_SESSION['admin'])) {
                 header('Location: inventory.php');
             }
         }
+    }
+    else if(isset($_GET['deleteID'])){
+        $productID = $_GET['deleteID'];
+        $stmt = $conn->prepare("DELETE FROM products WHERE id = ?");
+        $stmt->bind_param("i", $productID);
+        $stmt->execute();
+        if($stmt->affected_rows <= 1){
+            header('Location: inventory.php');
+        }
+    
+    }
+    else {
+        header('Location: inventory.php');
+    }
 ?>
 
 
@@ -41,6 +55,9 @@ if (isset($_SESSION['admin'])) {
             <div id="content" class="p-4 p-md-5 pt-5 text-center">
                 <div class="mb-3">
                     <h1 class="display-4">MANAGE INVENTORY ITEM <span><?= $productID; ?></span></h1>
+                    <div>
+                        <a href="inventory.php" class="btn btn-secondary">BACK</a>
+                    </div>
                 </div>
 
                 <section class="inventory-section mt-5">
@@ -67,6 +84,7 @@ if (isset($_SESSION['admin'])) {
                                             </div>
                                             <input type="hidden" name="product_id" value="<?= $products['id'] ?>">
                                             <button type="submit" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-danger"  onclick="DeleteBtn(<?= $products['id'] ?>)">Delete</button>
                                         </form>
                                     </div>
                                 </div>
@@ -79,9 +97,6 @@ if (isset($_SESSION['admin'])) {
         </div>
 
 <?php
-    } else {
-        header('Location: inventory.php');
-    }
 } else {
     header('Location: login.php');
 }
