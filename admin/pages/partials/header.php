@@ -5,6 +5,7 @@ require '../controller/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@ require '../controller/config.php';
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-<div id="loader"></div>
-<div style="display:none;" id="myDiv" class="animate-bottom">
+
+<body onload="myFunction()" style="margin:0;">
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
