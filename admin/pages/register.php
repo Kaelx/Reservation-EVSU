@@ -1,7 +1,7 @@
 <?php
 $page = "REGISTER";
 
-require 'header.php';
+require 'partials/header.php';
 
 if(!isset($_SESSION['admin'])){
 
@@ -56,6 +56,6 @@ if(!isset($_SESSION['admin'])){
 }else{
     header('location: index.php');
 }
-require 'footer.php';
+require 'partials/footer.php';
 
 ?>

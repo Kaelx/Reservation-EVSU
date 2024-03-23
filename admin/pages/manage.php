@@ -1,7 +1,7 @@
 <?php
 $page = 'MANAGE';
 
-require 'header.php';
+require 'partials/header.php';
 if (isset($_SESSION['admin'])) {
 
     if (isset($_GET['updateID'])) {
@@ -102,6 +102,6 @@ if (isset($_SESSION['admin'])) {
 }
 
 
-require 'footer.php';
+require 'partials/footer.php';
 
 ?>

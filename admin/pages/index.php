@@ -1,7 +1,7 @@
 <?php
 $page = 'DASHBOARD';
 
-require 'header.php';
+require 'partials/header.php';
 if (isset($_SESSION['admin'])) {
 ?>
 
@@ -28,5 +28,5 @@ if (isset($_SESSION['admin'])) {
     header('Location: login.php');
 }
 
-require 'footer.php';
+require 'partials/footer.php';
 ?>
