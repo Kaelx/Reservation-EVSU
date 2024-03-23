@@ -98,7 +98,7 @@ function ManageBtn(productId) {
 }
 
 
-function DeleteBtn(productId){
+function DeleteBtn(productId) {
     window.location.href = "manage.php?deleteID=" + productId;
     alert('Deleted!')
 }
@@ -108,7 +108,7 @@ function DeleteBtn(productId){
 function searchProducts() {
     var searchInput = $("#searchInput").val().trim().toLowerCase();
 
-    $("tbody tr").each(function() {
+    $("tbody tr").each(function () {
         var productName = $(this).find("td:nth-child(2)").text().toLowerCase();
         var productDescription = $(this).find("td:nth-child(3)").text().toLowerCase();
 
@@ -160,3 +160,21 @@ $(document).ready(function () {
         $("#content").toggleClass("active");
     });
 });
+
+
+
+
+
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+}
+
+myFunction();

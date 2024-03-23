@@ -13,4 +13,5 @@ require '../controller/config.php';
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
