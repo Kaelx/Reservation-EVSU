@@ -45,3 +45,18 @@ function login(event) {
         }
     });
 }
+
+
+
+
+
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+    $("#loader").hide();
+    $("#myDiv").show();
+}

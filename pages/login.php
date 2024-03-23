@@ -1,7 +1,7 @@
 <?php
 $page = "LOGIN";
 
-require 'header.php';
+require 'partials/header.php';
 
 if (!isset($_SESSION['user'])) {
 
@@ -45,5 +45,5 @@ if (!isset($_SESSION['user'])) {
 }
 
 
-require 'footer.php';
+require 'partials/footer.php';
 ?>

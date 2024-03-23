@@ -12,7 +12,9 @@ require '../controller/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $page; ?></title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
-<body>
+<body onload="myFunction()">
+    <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
