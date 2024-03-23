@@ -14,6 +14,6 @@ require '../controller/config.php';
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body onload="myFunction()" style="margin:0;">
+<body onload="myFunction()">
     <div id="loader"></div>
     <div style="display:none;" id="myDiv" class="animate-bottom">

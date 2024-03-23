@@ -143,30 +143,32 @@
     -webkit-animation-name: animatebottom;
     -webkit-animation-duration: 0.5s;
     animation-name: animatebottom;
-    animation-duration: 0.5s
+    animation-duration: 0.5s;
+    scroll-behavior: smooth;
+
 }
 
 @-webkit-keyframes animatebottom {
     from {
-        bottom: -100px;
-        opacity: 0
+        bottom: -20px;
+        opacity: 0;
     }
 
     to {
         bottom: 0px;
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes animatebottom {
     from {
-        bottom: -100px;
-        opacity: 0
+        bottom: -20px;
+        opacity: 0;
     }
 
     to {
         bottom: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
