@@ -100,6 +100,7 @@ function ManageBtn(productId) {
 
 function DeleteBtn(productId){
     window.location.href = "manage.php?deleteID=" + productId;
+    alert('Deleted!')
 }
 
 
