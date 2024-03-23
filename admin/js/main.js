@@ -99,8 +99,9 @@ function ManageBtn(productId) {
 
 
 function DeleteBtn(productId) {
-    window.location.href = "manage.php?deleteID=" + productId;
-    alert('Deleted!')
+    if (confirm("Are you sure you want to delete this product?")) {
+        window.location.href = "manage.php?deleteID=" + productId;
+    }
 }
 
 
@@ -173,6 +174,6 @@ function myFunction() {
 }
 
 function showPage() {
-    document.getElementById("loader").style.display = "none";
-    document.getElementById("myDiv").style.display = "block";
+    $("#loader").hide();
+    $("#myDiv").show();
 }
