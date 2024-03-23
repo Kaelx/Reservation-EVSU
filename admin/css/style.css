@@ -141,9 +141,9 @@
 .animate-bottom {
     position: relative;
     -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: 0.5s;
     animation-name: animatebottom;
-    animation-duration: 1s
+    animation-duration: 0.5s
 }
 
 @-webkit-keyframes animatebottom {
