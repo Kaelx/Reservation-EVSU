@@ -175,3 +175,17 @@
 #myDiv {
     display: none;
 }
+
+.table-responsive{
+    overflow-y: auto;
+    max-height: 600px;
+}
+.table-responsive img{
+    object-fit: cover;
+}
+
+#table-products th{
+    position: sticky;
+    top: 0;
+    border: 2px solid #f3f3f3;
+}

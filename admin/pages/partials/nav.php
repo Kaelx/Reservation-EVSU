@@ -1,6 +1,6 @@
 <nav id="sidebar" class="bg-light">
     <div class="sidebar-header text-center">
-        <button type="button" id="sidebarCollapse" class="btn btn-secondary">
+        <button type="button" id="sidebarCollapse" class="btn btn-light">
             <i class="bi bi-list"></i>
         </button>
         <h1><a href="index.php" class="logo">ADMIN</a></h1>

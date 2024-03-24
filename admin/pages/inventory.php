@@ -12,8 +12,8 @@ if (isset($_SESSION['admin'])) {
         require 'partials/nav.php'
         ?>
 
-        <div id="content" class="p-4 p-md-5 pt-5 text-center">
-            <div class="mb-3">
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="mb-3 text-center">
                 <h1 class="display-4">MANAGE INVENTORY</h1>
             </div>
             <div class="container mt-3">
@@ -43,12 +43,12 @@ if (isset($_SESSION['admin'])) {
                         </div>
                         <div class="mb-3">
                             <label for="productDesc" class="form-label">Product Description:</label>
-                            <input type="text" class="form-control input-large" id="productDesc" name="productDesc" required>
+                            <textarea type="text" class="form-control input-large" id="productDesc" name="productDesc" required></textarea>
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <label for="productQuantity" class="form-label">Quantity (per set):</label>
+                                    <label for="productQuantity" class="form-label">Quantity:</label>
                                     <div class="input-group">
                                         <button type="button" class="btn btn-secondary" onclick="decreaseValue()" id="decrease">-</button>
                                         <input type="number" class="form-control" id="productQuantity" name="productQuantity" step="1" required>
@@ -64,8 +64,10 @@ if (isset($_SESSION['admin'])) {
                                 <input type="number" class="form-control" id="productPrice" name="productPrice" step="0.01" required>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" onclick="addBtn(event)"> Add Product</button>
-                        <button type="button" class="btn btn-secondary" onclick="cancelBtn()">Cancel</button>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary" onclick="addBtn(event)"> Add Product</button>
+                            <button type="button" class="btn btn-secondary" onclick="cancelBtn()">Cancel</button>
+                        </div>
                     </form>
                 </div>
 
@@ -77,31 +79,32 @@ if (isset($_SESSION['admin'])) {
             $result = $conn->query($sql);
             ?>
             <section class="products-section mt-5">
-                <div class="container-lg">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 mx-auto">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped">
-                                    <thead class="bg-primary text-white">
+                                <table class="table table-bordered" id="table-products">
+                                    <thead class="bg-primary text-white text-center">
                                         <tr>
-                                            <th scope="col">Image</th>
-                                            <th scope="col">Name</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Quantity (Per set)</th>
-                                            <th scope="col">Price (Per set)</th>
-                                            <th scope="col">Manage</th>
+                                            <th scope="col" class="col-1">Image</th>
+                                            <th scope="col" class="col-2">Product Name</th>
+                                            <th scope="col" class="col-2">Description</th>
+                                            <th scope="col" class="col-1">Quantity</th>
+                                            <th scope="col" class="col-1">Price</th>
+                                            <th scope="col" class="col-1">Manage</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+
+                                    <tbody class="align-middle text-center">
                                         <?php while ($products = $result->fetch_assoc()) { ?>
                                             <tr>
-                                                <td><img src="<?= $products['product_image'] ?>" alt="Product Image" class="img-fluid"></td>
+                                                <td><img src="<?= $products['product_image'] ?>" alt="Product Image" class="img-thumbnail"></td>
                                                 <td><?= $products['product_name'] ?></td>
                                                 <td><?= $products['product_description'] ?></td>
                                                 <td><?= $products['product_quantity'] ?></td>
                                                 <td><?= $products['product_price'] ?></td>
                                                 <td>
-                                                    <button type="button" class="btn btn-primary btn-sm" onclick="ManageBtn(<?= $products['id']?>)">Manage</button>
+                                                    <button type="button" class="btn btn-primary btn-sm" onclick="ManageBtn(<?= $products['id'] ?>)">Manage</button>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -112,6 +115,7 @@ if (isset($_SESSION['admin'])) {
                     </div>
                 </div>
             </section>
+
 
 
 
