@@ -189,3 +189,36 @@
     top: 0;
     border: 2px solid #f3f3f3;
 }
+
+
+
+/* SIDEBAR STYLES */
+#sidebar .list-unstyled.components li a {
+    text-decoration: none;
+    margin: 10px;
+    padding: 30px;
+}
+
+
+
+
+/* TABLE */
+.table th,
+.table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #ddd;
+}
+
+.table th {
+    background-color: #800000;
+    color: white;
+}
+
+.btn{
+    height: 40px;
+}
+.btn:hover {
+    background-color: #660000;
+}
