@@ -192,12 +192,7 @@
 
 
 
-/* SIDEBAR STYLES */
-#sidebar .list-unstyled.components li a {
-    text-decoration: none;
-    margin: 10px;
-    padding: 30px;
-}
+
 
 
 
@@ -219,6 +214,30 @@
 .btn{
     height: 40px;
 }
-.btn:hover {
-    background-color: #660000;
+
+
+
+
+/* SIDEBAR STYLES */
+#sidebar .list-unstyled.components li a {
+    text-decoration: none;
+    margin: 5px;
+    padding: 30px;
+    
+}
+
+.sidebar-header {
+    padding: 20px;
+    background: #8B0000;
+}
+.sidebar-header a{
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-header button {
+    background: rgb(221, 219, 219);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
 }

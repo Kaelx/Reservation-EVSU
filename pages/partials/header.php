@@ -1,9 +1,9 @@
 <?php
 session_start();
+
 require '../controller/config.php';
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

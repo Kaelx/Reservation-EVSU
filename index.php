@@ -94,10 +94,11 @@ if (!isset($_SESSION['user'])) {
     <body onload="myFunction()">
         <div id="loader"></div>
         <div style="display:none;" id="myDiv" class="animate-bottom">
+            <div class="sticky-top text-center">
+                <h1 class="display-4 fw-bold">EVSU-IGP RESERVATION</h1>
+            </div>
             <div class="container">
                 <div class="d-flex flex-column justify-content-center align-items-center text-center">
-                    <h1>NOT LOGIN YET</h1>
-                    <h2>LIST OF PRODUCTS WILL APPEAR HERE!</h2>
 
 
                     <?php
@@ -111,7 +112,7 @@ if (!isset($_SESSION['user'])) {
                                 <?php
                                 while ($products = $result->fetch_assoc()) {
                                 ?>
-                                    <div class="col col-lg-4 col-md-4 d-flex align-items-stretch">
+                                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                                         <div class="card">
                                             <img src="<?php echo 'admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
                                             <div class="card-body">
@@ -134,10 +135,10 @@ if (!isset($_SESSION['user'])) {
             </div>
 
 
-<?php
-} else {
-    header('location:pages/index.php');
-}
+        <?php
+    } else {
+        header('location:pages/index.php');
+    }
 
-require 'pages/partials/footer.php'
-?>
+    require 'pages/partials/footer.php'
+        ?>

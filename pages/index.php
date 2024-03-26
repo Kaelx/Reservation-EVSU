@@ -8,43 +8,44 @@ if (isset($_SESSION['user'])) {
 ?>
 
 
-    <div class="container">
-        <div class="text-center">
-            <h1>MAIN</h1>
-            <h2>LIST OF PRODUCT HERE!</h2>
-            <div>
-                <a href="../controller/logout.php" class="btn btn-danger">LOGOUT</a>
-            </div>
+    <div class="wrapper d-flex align-items-stretch">
+        <?php
+        require 'partials/nav.php'
+        ?>
 
-            <?php
-            require '../controller/config.php';
-            $sql = "SELECT * FROM products";
-            $result = $conn->query($sql);
-            ?>
-            <section id="products" class="bg-link mt-5">
-                <div class="container-lg">
-                    <div class="row justify-content-center align-item-center g-4">
-                        <?php
-                        while ($products = $result->fetch_assoc()) {
-                        ?>
-                            <div class="col col-lg-4 col-md-4 d-flex align-items-stretch">
-                                <div class="card">
-                                    <img src="<?php echo '../admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
-                                    <div class="card-body">
-                                        <h3 class="card-title fw-bold"><?php echo $products['product_name']; ?></h3>
-                                        <p class="card-text text-muted lead"><?php echo $products['product_description']; ?></p>
-                                        <a href="#" class="btn btn-primary">ORDER NOW!</a>
+        <div id="content" class="p-4 p-md-5 pt-5 text-center">
+            <div class="mb-3">
+                <h2>SCHOOL PRODUCTS</h2>
+            </div>
+            <div class="container">
+                <?php
+                require '../controller/config.php';
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                ?>
+                <section id="products" class="bg-link mt-3">
+                    <div class="container-sm">
+                        <div class="row justify-content-center align-item-center g-2">
+                            <?php
+                            while ($products = $result->fetch_assoc()) {
+                            ?>
+                                <div class="col col-lg-3 col-md-3 d-flex align-items-stretch">
+                                    <div class="card">
+                                        <img src="<?php echo '../admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold"><?php echo $products['product_name']; ?></h5>
+                                            <p class="card-text text-muted small"><?php echo $products['product_description']; ?></p>
+                                            <a href="#" class="btn btn-primary btn-sm">ORDER NOW!</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        <?php
-                        }
-                        ?>
-
+                            <?php
+                            }
+                            ?>
+                        </div>
                     </div>
-                </div>
-            </section>
-
+                </section>
+            </div>
         </div>
     </div>
 

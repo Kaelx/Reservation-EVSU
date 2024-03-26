@@ -12,11 +12,11 @@ if (isset($_SESSION['admin'])) {
         require 'partials/nav.php'
         ?>
 
-        <div id="content" class="p-4 p-md-5 pt-5">
+        <div id="content">
             <div class="mb-3 text-center">
-                <h1 class="display-4">MANAGE INVENTORY</h1>
+                <h5 class="display-4">INVENTORY</h5>
             </div>
-            <div class="container mt-3">
+            <div class="container mt-2">
                 <div class="row justify-content-between">
                     <div class="col-md-4">
                         <button type="button" class="btn btn-success" id="addproductBtn" onclick="showProductBtn()">Add Product</button>
@@ -46,8 +46,19 @@ if (isset($_SESSION['admin'])) {
                             <textarea type="text" class="form-control input-large" id="productDesc" name="productDesc" required></textarea>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-6">
-                                <div class="mb-3">
+                                <div class="col-8">
+                                    <div class="mb-3 text-center">
+                                        <label for="productPrice" class="form-label">Price:</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">PHP</span>
+                                            <input type="number" class="form-control" id="productPrice" name="productPrice" step="0.01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <div class="mb-3 text-center">
                                     <label for="productQuantity" class="form-label">Quantity:</label>
                                     <div class="input-group">
                                         <button type="button" class="btn btn-secondary" onclick="decreaseValue()" id="decrease">-</button>
@@ -55,13 +66,6 @@ if (isset($_SESSION['admin'])) {
                                         <button type="button" class="btn btn-secondary" onclick="increaseValue()" id="increase">+</button>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productPrice" class="form-label">Price:</label>
-                            <div class="input-group">
-                                <span class="input-group-text">PHP</span>
-                                <input type="number" class="form-control" id="productPrice" name="productPrice" step="0.01" required>
                             </div>
                         </div>
                         <div class="text-center">

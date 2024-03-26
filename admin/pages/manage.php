@@ -62,10 +62,7 @@ if (isset($_SESSION['admin'])) {
         require 'partials/nav.php'
         ?>
         <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="mb-3 text-center">
-                <h1 class="display-4">MANAGE INVENTORY ITEM <span><?= $productID; ?></span></h1>
-            </div>
-            <section class="inventory-section mt-5">
+            <section class="inventory-section mt-2">
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-md-6">
@@ -76,26 +73,45 @@ if (isset($_SESSION['admin'])) {
                                 <div class="card-body">
                                     <form method="post" action="" enctype="multipart/form-data">
                                         <div class="mb-3">
+                                            <label for="product_image" class="form-label">Image:</label>
+                                            <input type="file" class="form-control" name="product_image">
+                                        </div>
+                                        <div class="mb-3">
                                             <label for="product_name" class="form-label">Product Name:</label>
                                             <input type="text" class="form-control" name="product_name" value="<?= $products['product_name'] ?>" placeholder="Product Name">
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="mb-1">
                                             <label for="product_description" class="form-label">Product Description:</label>
                                             <textarea class="form-control" name="product_description" placeholder="Product Description"><?= $products['product_description'] ?></textarea>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="product_quantity" class="form-label">Quantity:</label>
-                                            <input type="number" class="form-control" name="product_quantity" value="<?= $products['product_quantity'] ?>">
+
+
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <div class="mb-3 text-center">
+                                                    <label for="product_price" class="form-label">Price:</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">PHP</span>
+                                                        <input type="number" step="0.01" class="form-control" name="product_price" value="<?= $products['product_price'] ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="product_price" class="form-label">Price:</label>
-                                            <input type="number" step="0.01" class="form-control" name="product_price" value="<?= $products['product_price'] ?>">
+                                        <div class="row justify-content-center">
+                                            <div class="col-6">
+                                                <div class="mb-3 text-center">
+                                                    <label for="product_quantity" class="form-label">Quantity:</label>
+                                                    <div class="input-group">
+                                                        <button type="button" class="btn btn-secondary" onclick="decreaseValue()" id="decrease">-</button>
+                                                        <input type="number" class="form-control" name="product_quantity" id="productQuantity" value="<?= $products['product_quantity'] ?>">
+                                                        <button type="button" class="btn btn-secondary" onclick="increaseValue()" id="increase">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="mb-3">
-                                            <label for="product_image" class="form-label">Update Image:</label>
-                                            <input type="file" class="form-control" name="product_image">
-                                        </div>
-                                        <div class="text-center">
+
+
+                                        <div class="mt-3 text-center">
                                             <input type="hidden" name="product_id" value="<?= $products['id'] ?>">
                                             <button type="submit" class="btn btn-primary">Update</button>
                                             <button type="button" class="btn btn-danger" onclick="DeleteBtn(<?= $products['id'] ?>)">Delete</button>
