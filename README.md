@@ -1,5 +1,5 @@
 # EVSU IGP ITEMS ORDER/RESERVATION PROJECT
-ongoing project, still working on this!
+## ongoing project, still working on this!
 
 ### REQUIREMENTS
 - XAMPP
