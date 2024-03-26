@@ -14,7 +14,7 @@ if (!isset($_SESSION['user'])) {
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header text-center">
-                        <h1>REGISTER NOW!</h1>
+                        <h1>REGISTER</h1>
                     </div>
                     <div class="card-body">
                         <form action="#" method="post">

@@ -31,7 +31,9 @@ if (isset($_SESSION['user'])) {
                             ?>
                                 <div class="col col-lg-3 col-md-3 d-flex align-items-stretch">
                                     <div class="card">
-                                        <img src="<?php echo '../admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
+                                        <div class="container">
+                                            <img src="<?php echo '../admin/images/' . $products['product_image']; ?>" alt="product-img" class="img-fluid">
+                                        </div>
                                         <div class="card-body">
                                             <h5 class="card-title fw-bold"><?php echo $products['product_name']; ?></h5>
                                             <p class="card-text text-muted small"><?php echo $products['product_description']; ?></p>
