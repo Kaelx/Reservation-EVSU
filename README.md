@@ -4,14 +4,16 @@
 ### REQUIREMENTS
 - XAMPP
 - MySql
-- Import the database file provided in database folder [click this!](https://github.com/Kaelx/Reservation-EVSU/blob/main/database/webphp.sql)
 
 ### TO RUN THE PROJECT
-- (Users side) open a browser, input the localhost directory url. 
+- Move the downloaded file project to the XAMPP htdocs folder.
+- Import the database file to your localhost database provided [here. Click this!](https://github.com/Kaelx/Reservation-EVSU/blob/main/database/webphp.sql) .
+- Open the application XAMPP, then let the MySql start.
+- (Users side) open a browser, input the localhost URL directory. 
 ``` 
-example: localhost:8888/index.php 
+example: localhost/Reservation-EVSU/index.php
 ```
-- (Admin side) input the localhost directory url. 
+- (Admin side) input the localhost URL directory. 
 ``` 
-example: localhost:8888/admin/index.php 
+example: localhost/Reservation-EVSU/admin/index.php
 ```
