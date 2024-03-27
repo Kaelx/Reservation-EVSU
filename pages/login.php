@@ -10,7 +10,7 @@ if (!isset($_SESSION['user'])) {
 
 <div class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="card p-4">
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-center justify-content-center">
